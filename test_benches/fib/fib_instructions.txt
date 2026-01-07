@@ -1,0 +1,19 @@
+20080000   ; t0 = 0
+20090001   ; t1 = 1
+200A000A   ; t2 = 10
+200B0000   ; t3 = 0   (address pointer)
+
+AC680000   ; sw t0,0(t3)
+
+11400009   ; beq t2,zero,halt
+
+01095820   ; add t3,t0,t1
+01204020   ; add t0,t1,zero
+01604820   ; add t1,t3,zero
+
+216B0004   ; addi t3,t3,4
+
+214AFFFF   ; addi t2,t2,-1
+
+08000005   ; j loop
+0800000C   ; halt
